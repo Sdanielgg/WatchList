@@ -1,0 +1,4 @@
+_id,username,email,password,createdAt,updatedAt
+665f10000000000000000001,suri,suri@example.com,$2b$10$replaceThisWithARealBcryptHashForPassword123,2026-06-28T18:03:11.694970Z,2026-06-28T18:03:11.694970Z
+665f10000000000000000002,mika,mika@example.com,$2b$10$replaceThisWithARealBcryptHashForPassword123,2026-06-28T18:03:11.694970Z,2026-06-28T18:03:11.694970Z
+665f10000000000000000003,leo,leo@example.com,$2b$10$replaceThisWithARealBcryptHashForPassword123,2026-06-28T18:03:11.694970Z,2026-06-28T18:03:11.694970Z
