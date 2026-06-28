@@ -196,7 +196,7 @@
 
         try {
           const response = await fetch(
-            `https://watch-list-backend.vercel.app/api/media/${mediaId}`,
+            `https://watch-list-backend-xi.vercel.app/api/media/${mediaId}`,
             {
               method: "GET",
               headers: {
@@ -259,7 +259,7 @@
         } catch (error) {
           mainContent.innerHTML = `
             <p class="error">
-              Could not connect to the backend. Make sure your server is running on http://127.0.0.1:3000.
+              Could not connect to the backend. Make sure your server is running on https://watch-list-backend-xi.vercel.app/.
             </p>
           `;
         }
