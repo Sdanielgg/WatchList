@@ -15,6 +15,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Watchlist API is running",
+  });
+});
+
 app.use("/api/users", userRoutes);
 app.use("/api/media", mediaRoutes);
 app.use("/api/watchlist", watchlistRoutes);
