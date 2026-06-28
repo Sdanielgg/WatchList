@@ -6,7 +6,7 @@ import { connectDB } from "../models/db.config.js";
 
 import userRoutes from "../routes/user.route.js";
 import mediaRoutes from "../routes/media.route.js";
-import watchlistRoutes from "../routes/watchlist.route.js";
+import watchlistRoutes from "../routes/watchList.route.js";
 
 await connectDB();
 

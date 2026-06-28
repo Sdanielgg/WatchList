@@ -9,7 +9,7 @@ export const getWatchList = async (req, res, next) => {
         message: "User not found",
       });
     }
-    const watchList = await watchList.find({ user: user.id });
+    const watchList = await WatchList.find({ user: req.user.id }).populate("media");
     return res.status(200).json({
       message: "Watchlist retrieved successfully!",
       data: watchList,
@@ -21,7 +21,7 @@ export const getWatchList = async (req, res, next) => {
 
 export const getWatchListById = async (req, res, next) => {
   try {
-    const watchList = await watchList.findById(req.params.id);
+    const watchList = await WatchList.findById(req.params.id).populate("media");
     return res.status(200).json({
       message: "Watchlist retrieved successfully!",
       data: watchList,

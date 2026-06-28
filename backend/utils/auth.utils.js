@@ -36,11 +36,12 @@ export const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return next(unauthorizedError("Acesso negado. Token não fornecido."));
+      return res.status(401).json({
+        message: "Acesso negado. Token não fornecido.",
+      });
     }
 
     const token = authHeader.split(" ")[1];
-
     const decoded = jwt.verify(token, JWT_SECRET);
 
     req.user = {
@@ -52,9 +53,13 @@ export const authMiddleware = (req, res, next) => {
     next();
   } catch (error) {
     if (error.name === "TokenExpiredError") {
-      return next(unauthorizedError("O token expirou. Faz login novamente."));
+      return res.status(401).json({
+        message: "O token expirou. Faz login novamente.",
+      });
     }
 
-    return next(unauthorizedError("Token inválido."));
+    return res.status(401).json({
+      message: "Token inválido.",
+    });
   }
 };

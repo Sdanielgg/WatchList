@@ -1,5 +1,12 @@
-import {Media} from "../models/db.config.js";
-
+import {Media, User} from "../models/db.config.js";
+function isValidUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
 export const getAllMedia = async (req, res, next) => {
   try {
     const media = await Media.find();
